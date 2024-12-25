@@ -1,0 +1,46 @@
+Now, to add a new network, you just need to:
+
+>>>>>>> 1. Import the chain from viem:
+```
+import { optimismSepolia } from 'viem/chains';
+```
+
+>>>>>>> 2. Add it using the helper function:
+```
+addNetwork('optimism-sepolia', optimismSepolia);
+```
+
+Example of adding multiple networks:
+``` 
+// Add at the bottom of your imports
+import { 
+  optimismSepolia, 
+  mainnet, 
+  shardeumSphinx 
+} from 'viem/chains';
+
+// Add after networks configuration
+addNetwork('optimism-sepolia', optimismSepolia);
+addNetwork('shardeum-sphinx', shardeumSphinx);
+addNetwork('ethereum', mainnet);
+```
+
+
+--------------------------------
+
+The benefits of this approach:
+1. Modular: Each network is added in a consistent way
+2. Type-safe: TypeScript ensures correct chain configuration
+3. Maintainable: Easy to add or remove networks
+4. Dynamic: The input parser automatically works with new networks
+5. Flexible: Works with any chain supported by viem
+
+--------------------------------
+
+Remember to:
+1. Check if the network requires different RPC endpoints
+2. Ensure you have test tokens on new networks
+3. Update any network-specific error messages or handling
+4. Test transactions on new networks before deploying
+
+This structure makes it easy to maintain and extend your multi-chain transaction system!
